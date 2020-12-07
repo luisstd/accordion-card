@@ -1,0 +1,160 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* typhography */
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* colors */
+
+/* background */
+html {
+  background-image: linear-gradient(
+    to bottom,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+  z-index: 5;
+}
+
+/* layout */
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.accordion-container {
+  padding: none;
+  margin: none;
+  display: flex;
+  flex-flow: row;
+  width: 40vw;
+  background-color: white;
+  padding: 3.5rem;
+  border-radius: 10px;
+}
+
+.accordion-illustration {
+  position: relative;
+  left: -8.5rem;
+  z-index: 2;
+}
+
+.accordion-faq {
+}
+
+/* accordion */
+.tab {
+  background-color: white;
+  font-weight: 400;
+  color: hsl(238, 29%, 16%);
+  cursor: pointer;
+  margin-left: -10px;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: all ease-in-out 0.4s;
+}
+
+label {
+  font-size: 16px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid hsl(240, 5%, 91%);
+}
+
+.tab-content {
+  font-size: 14px;
+  color: hsl(240, 6%, 50%);
+  background-color: white;
+  display: none;
+}
+
+.tab input:checked ~ .tab-content {
+  transition: all ease-in-out 0.4s;
+  display: block;
+}
+
+.tab input {
+  display: none;
+}
+
+/* accordion-label */
+.tab label {
+  display: block;
+  background: white;
+  color: hsl(238, 29%, 16%);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.tab label:after {
+  font-size: 1.5rem;
+  content: "\002c6";
+  position: relative;
+  display: inline-block;
+  left: 1rem;
+  top: -0.5rem;
+  transform-origin: center center;
+  transform: rotate(180deg);
+  transition: all ease-in-out 0.3s;
+  color: hsl(14, 88%, 65%);
+}
+
+input:checked + label {
+  font-weight: 700;
+}
+
+.tab input:checked + label:after {
+  left: 0.25rem;
+  top: 0.4rem;
+  transform-origin: center;
+  transform: scaleY(1);
+  font-weight: 700;
+}
+
+/* accordion-content */
+.tab-content {
+  cursor: default;
+  overflow: hidden;
+  /* CSS animation will not work with auto height */
+  /* This is why we use max-height */
+  transition: all ease-in-out 0.4s;
+  max-height: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.tab input:checked ~ .tab-content {
+  /* Set the max-height to a large number */
+  /* Or 100% viewport height */
+  max-height: 100vh;
+  transition: all ease-in-out 0.4s;
+}
+
+/* attribution */
+.attribution {
+  font-size: 14px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
