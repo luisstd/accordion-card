@@ -7,7 +7,6 @@
 /* typhography */
 html {
   font-family: "Kumbh Sans", sans-serif;
-  overflow-x: hidden;
 }
 
 body {
@@ -19,8 +18,6 @@ h1 {
   font-weight: 700;
 }
 
-/* colors */
-
 /* background */
 html {
   background-image: linear-gradient(
@@ -29,6 +26,9 @@ html {
     hsl(240, 73%, 65%)
   );
   z-index: 5;
+  background-size: cover;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 /* layout */
@@ -43,22 +43,19 @@ html {
   padding: none;
   margin: none;
   display: flex;
-  flex-flow: row;
   width: 40vw;
   background-color: white;
   padding: 3.5rem;
   border-radius: 10px;
-}
 
-.accordion-illustration {
-  height: 10rem;
-}
-
-.accordion-container {
   background-size: 100%;
   background-repeat: no-repeat;
   background-image: url(./images/bg-pattern-desktop.svg);
   background-position: -30.5rem -16.5rem;
+}
+
+.accordion-illustration {
+  height: 10rem;
 }
 
 .img-1 {
@@ -177,4 +174,53 @@ input:checked + label {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* media query */
+@media screen and (max-width: 375px) {
+  html {
+  }
+
+  .accordion-container {
+    margin-top: 10rem;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .accordion-faq {
+    position: initial;
+    margin-top: -6rem;
+    align-self: center;
+    justify-content: center;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .tab label {
+    font-size: 12px;
+  }
+
+  .tab-content {
+    font-size: 11px;
+  }
+
+  .accordion-illustration {
+    position: relative;
+    top: -16rem;
+    left: 3.4rem;
+  }
+
+  .img-1,
+  .img-2 {
+    position: relative;
+    transform: scale(0.5);
+  }
+
+  .attribution,
+  footer {
+    display: none;
+  }
 }
