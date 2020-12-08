@@ -51,12 +51,32 @@ html {
 }
 
 .accordion-illustration {
+  height: 10rem;
+}
+
+.accordion-container {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(./images/bg-pattern-desktop.svg);
+  background-position: -30.5rem -16.5rem;
+}
+
+.img-1 {
   position: relative;
   left: -8.5rem;
+  z-index: 1;
+}
+
+.img-2 {
+  position: relative;
+  left: -8.5rem;
+  top: -15rem;
   z-index: 2;
 }
 
 .accordion-faq {
+  position: relative;
+  right: 2.3rem;
 }
 
 /* accordion */
